@@ -1,31 +1,31 @@
-sumArray();
+
 function sumArray(array){
   var takenArray = array;
   var total = 0;
   for (var i = 0; i < takenArray.length; i++){
-    debugger;
-    total = total + Number(takenArray[i]);
-    console.log(total);
+    total = total + parseInt(takenArray[i]);
   }
+  return total;
 }
 
-function fitWithinVal(){
-  var array = [1, 5, 3, 2, 6];
+function fitWithinVal(array, number){
+  // var array = [1, 100, 2, 4, 5, 6];
   var total = 0;
+  var newArray = [];
   for (var i = 0; i < array.length; i++) {
-    debugger;
-    total = total + Number(array[i]);
-    console.log(total);
-    if (total === 4 ){
-      console.log()
+    if ((total+array[i]) < number ){
+      total = total + parseInt(array[i]);
+      console.log(total);
+      newArray.push(array[i]);
     }
   }
+  return newArray;
 }
 
-function getAllNamesShorterThan(){
-
+function getAllNamesShorterThan(nameArray, number){
+  return nameArray.filter(name => name.length < number);
 }
 
-function makeLabel(){
-
+function makeLabel(input){
+  return input.greeting + " " + input.givenName + " " + input.familyName+'\n'+input["home address"].streetNumber + " " + input["home address"].streetName+'\n'+input["home address"].city+ ", " + input["home address"].state + " " +input["home address"].zip
 }
